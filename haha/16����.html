@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#div1{
+				width: 100px; 
+				height: 100px; 
+				background-color: red;
+				position: absolute;
+				left: 50px; 
+				top: 50px
+			}
+		</style>
+		<script src = "js/tool.js"></script>
+		<script>
+			window.onload = function(){
+				var oDiv = document.getElementById("div1");
+				document.onkeydown = function(ev){
+					var e = ev || window.event;
+					var speed = 5;
+					//按下shift的时候，速度变成原来的十倍
+					if(e.shiftKey){
+						speed *= 10;
+					}
+
+					switch(e.keyCode){
+						case 37:
+							oDiv.style.left = oDiv.offsetLeft - speed + 'px';
+							break;
+						case 38:
+							oDiv.style.top = oDiv.offsetTop - speed + 'px';
+							break;
+						case 39:
+							oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+							break;
+						case 40:
+							oDiv.style.top = oDiv.offsetTop + speed + 'px';
+							break;
+						default:
+							break;
+					}
+
+				
+					if(e.altKey && e.keyCode == 82){
+						oDiv.style.backgroundColor = randomColor();
+					}else if(e.altKey && e.keyCode == 74){
+						oDiv.style.backgroundColor = "red";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id = "div1"></div>
+	</body>
+</html>
+
+
+
+

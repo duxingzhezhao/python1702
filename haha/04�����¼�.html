@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script>
+			/*
+				键盘事件
+					1、输入标签 input textarea
+					2、document
+				
+					(全键盘)
+					keydown  键盘按下  如果按下不懂，会不停的去调用
+					keyup    键盘抬起
+
+					
+					(只支持字符键)
+					keypress 
+			*/
+			window.onload = function(){
+				/*document.onkeyup = function(){
+					document.title = "抬起";
+				}
+
+				var i = 0;
+				document.onkeydown = function(){
+					// document.title = "按下";
+					document.title = i++;
+				}*/
+
+				document.onkeypress = function(){
+					document.title = "字符键有效"
+				}
+				document.onkeyup = function(){
+					document.title = "抬起";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+

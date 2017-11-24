@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script>
+			window.onload = function(){
+				document.onclick = function(ev){
+					// alert(ev);
+					// alert(window.event);  IE
+					var e = ev || window.event;
+					alert(e);
+				}
+
+				/*
+					【注】系统会根据我们绑定事件，生成一个事件对象，这个事件对象就是event，系统在调用处理事件的函数的时候自动传参。
+					【注】object MouseEvent
+				*/
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script>
+			window.onload = function(){
+				document.onclick = function(ev){
+					var e = ev || window.event;
+					alert(getArr(e));
+				}
+			}
+
+			function getArr(e){
+				var res = [];
+				if(e.shiftKey){
+					res.push("shift");
+				}
+				if(e.ctrlKey){
+					res.push("ctrl");
+				}
+				if(e.altKey){
+					res.push("alt");
+				}
+				if(e.metaKey){
+					res.push("windows");
+				}
+				return res;
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+
+

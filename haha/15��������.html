@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script>
+			window.onload = function(){
+				/*
+					键码
+					keyCode
+					【注】1、只能在keydown/keyup有效
+						 2、返回的是当前键的ASIIC码值，不区分大小。
+				*/
+				/*document.onkeydown = function(ev){
+					var e = ev || window.event;
+					alert(e.keyCode);
+
+				}*/
+
+				/*
+					字符码
+					charCode
+					【注】1、只在keypress下有效
+					     2、区分大小写
+				*/
+				document.onkeypress = function(ev){
+					var e = ev || window.event;
+					alert(e.charCode);
+				}
+
+
+				/*
+					上下左右
+					shift + 上下左右
+					alt + r 变色
+					alt + j恢复原色
+				*/
+			}	
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+
+
+
+

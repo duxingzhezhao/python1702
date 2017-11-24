@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script>
+			window.onload = function(){
+				var oInput = document.getElementById("input");
+
+				/*oInput.onselect = function(){
+					alert("被选中了");
+				}*/
+
+				/*
+					获取焦点
+					失去焦点
+				*/
+				/*oInput.onchange = function(){
+					alert("被改变了");
+				}*/
+
+				oInput.onfocus = function(){
+					this.value = "获取焦点";
+				}
+				oInput.onblur = function(){
+					this.value = "失去焦点";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input id = "input" type = "text" value = "我是文本" />
+	</body>
+</html>
+
+
+
+
+
+
+
+
+

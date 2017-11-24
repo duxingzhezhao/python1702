@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script>
+			function btnClick(){
+				alert(123);
+			}
+			window.onload = function(){
+				//外联模式/脚本模式
+				var oBtn = document.getElementById("btn");
+				oBtn.onclick = btnClick;
+			}
+		</script>
+	</head>
+	<body>
+		<!-- 内联模式 -->
+		<!-- <button onclick = "btnClick();">按钮</button> -->
+		<button id = "btn">按钮</button>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script>
+			window.onload = function(){
+				document.onkeypress = function(ev){
+					var e = ev || window.event;
+
+					/*
+						String.fromCharCode() 
+						返回值：将ASIIC码值转成字母组成字符串
+						参数任意。
+					*/
+					alert(String.fromCharCode(e.charCode));
+				}
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

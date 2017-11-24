@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			div{padding: 50px}
+			#div1{background-color: red}
+			#div2{background-color: yellow}
+			#div3{background-color: blue}
+		</style>
+		<script>
+			window.onload = function(){
+				var aDivs = document.getElementsByTagName("div");
+				for(var i = 0; i < aDivs.length; i++){
+					aDivs[i].onclick = function(ev){
+						var e = ev || window.event;
+						alert(this.id);
+						// e.cancelBubble = true;
+						// e.stopPropagation();
+						stopBubble(e);
+					}
+				}
+			}
+
+			// 阻止事件冒泡浏览器兼容写法
+			function stopBubble(e){
+				if(e.cancelBubble){
+					e.cancelBubble = true;
+				}else{
+					e.stopPropagation();
+				}
+			}
+
+			/*
+			事件流
+				事件冒泡  从里向外响应
+				事件捕捉  从外向里响应
+
+				阻止事件冒泡
+			*/
+		</script>
+	</head>
+	<body>
+		<div id = "div1">
+			<div id = "div2">
+				<div id = "div3"></div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+

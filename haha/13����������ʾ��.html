@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#div1 a{display: inline-block; margin: 100px; font-size: 30px}
+			#msg{width: 400px; height: 150px; border: 1px solid black; background-color: #ccc; display: none; position: absolute;}
+		</style>
+		<script>
+			var arr = ["托尼·史塔克(Tony Stark)即钢铁侠(Iron Man),是美国漫威漫画旗下超级英雄,初次登场于《悬疑故事》(Tales of Suspense)第39期(1963年3月),由斯坦·李、赖瑞·...", "雷神托尔(Thor)是美国漫威漫画旗下超级英雄。初次登场于《神秘之旅》(Journey into Mystery)第83期(1962年8月),由斯坦·李、杰克·科比和拉里·利伯联合创造。本...", "蜘蛛侠（托比·马奎尔 Tobey Maguire 饰）在经历了重重考验之后，成为了人人敬仰的正义英雄，抱得."];
+			window.onload = function(){
+				var oDiv = document.getElementById("div1");
+				var aAs = oDiv.getElementsByTagName("a");
+				var oMsg = document.getElementById("msg");
+
+				//1、添加移入移出，移动
+				for(var i = 0; i < aAs.length; i++){
+					//记录当前a标签的下标 
+					aAs[i].index = i;
+
+					aAs[i].onmouseover = function(ev){
+						var e = ev || window.event;
+
+						oMsg.style.display = "block";
+						//将信息框，显示在鼠标的位置
+						oMsg.style.left = e.clientX + 5 + "px";
+						oMsg.style.top = e.clientY + 5 + "px";
+
+						//内容显示
+						oMsg.innerHTML = arr[this.index];
+
+					}
+
+					aAs[i].onmouseout = function(){
+						oMsg.style.display = "none";
+					}
+
+					aAs[i].onmousemove = function(ev){
+						var e = ev || window.event;
+						oMsg.style.left = e.clientX + 5 + "px";
+						oMsg.style.top = e.clientY + 5 + "px";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id = "div1">
+			<a href="#">钢铁侠</a><br />
+			<a href="#">雷神</a><br />
+			<a href="#">蜘蛛侠</a>
+			<div id = "msg"></div>
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

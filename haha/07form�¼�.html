@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script>
+			window.onload = function(){
+				var oForm = document.getElementById("form");
+				oForm.onsubmit = function(){
+					alert("点击submit按钮触发");
+				}
+				oForm.onreset = function(){
+					alert("点击reset按钮触发");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form action="#" id = "form">
+			<input type = "txt" />
+			<input type = "submit" />
+			<input type = "reset" />
+		</form>
+	</body>
+</html>

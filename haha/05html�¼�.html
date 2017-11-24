@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script>
+			
+			/*
+				load     当页面加载完成，执行
+				unload   当页面进行解构的时候调用(IE) 刷新该年页面
+
+				resize   当页面窗口大小发生变化的时候执行的函数
+				scroll   当前页面滚动的时候，执行的函数
+			*/
+			var i = 0;
+			window.onresize = function(){
+				document.title = "resize" + i++;
+			}
+			window.onscroll = function(){
+				document.title = "scroll" + i++;
+			}
+		</script>
+	</head>
+	<body style = "height: 3000px">
+		
+	</body>
+</html>

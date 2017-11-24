@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script>
+			window.onload = function(){
+
+				/*
+					button
+					点击左键  0
+					点击滚轮  1
+					点击右键  2
+				*/
+
+				document.onclick = function(ev){
+					var e = ev || window.event;
+					alert(e.button);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script>
+			document.onclick = function(ev){
+				var e = ev || window.event;
+				// 相对于窗口的左上角
+				alert(e.clientX + ", " + e.clientY);
+
+
+				// 相对于文本的左上角
+				alert(e.pageX + ", " + e.pageY);
+
+
+
+				// 相对于当前屏幕左上角
+				// alert(e.screenX + ", " + e.screenY);
+			}
+		</script>
+	</head>
+	<body style = "height: 3000px">
+		
+	</body>
+</html>

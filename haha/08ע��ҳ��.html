@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#div1{width: 200px; height: 100px; background-color: orange; border: 1px solid black; text-align: center; padding: 50px; margin: 100px auto}
+			#div1 input{width: 200px; height: 20px; font-size: 16px}
+			#div1 span{color: red; font-size: 14px}
+		</style>
+		<script>
+			window.onload = function(){
+				//失去焦点进行检测
+				var oDiv = document.getElementById("div1");
+				var aInputs = oDiv.getElementsByTagName("input");
+				var aSpans = oDiv.getElementsByTagName('span');
+
+				aInputs[0].onblur = function(){
+					//检测用户名是否为空
+					//将空格进行删除
+					this.value = this.value.replace(/\s/ig, "");
+					if(!this.value){
+						aSpans[0].innerHTML = "用户名不能为空";
+					}else if(this.value.length < 6 || this.value.length > 18){
+						//用户名长度
+						aSpans[0].innerHTML = "用户名长度是6~18位";
+					}else if(/^\d/.test(this.value)){
+						aSpans[0].innerHTML = "用户名首位不能为数字";
+					}else if(/\W/.test(this.value)){
+						aSpans[0].innerHTML = "用户名必须是数字字母下划线";
+					}else{
+						aSpans[0].innerHTML = "✔️";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id = "div1">
+			<input type = "text"  placeholder = "用户名" /><br />
+			<span>请输入用户名</span><br />
+			<input type = "password" placeholder = "密码" /><br />
+			<span>请输入密码</span>
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+
+

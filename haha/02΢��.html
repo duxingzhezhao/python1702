@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#panel{width: 400px; height: 300px; background-color: gray; display: none; position: absolute;}
+			#close{height: 40px; width: 40px; font-size: 21px; color: red}
+			#enter{height: 40px; font-size: 18px; right: 0px; position: absolute;}
+			#panel .title{height: 40px; background-color: blue; position: relative;}
+			#txt{width: 396px; height: 260px}
+			#msg{width: 300px; height: 600px; border: 1px solid black; margin: 100px auto;}
+			#msg div{width: 300px; border-bottom: 1px dotted black; margin-top: 5px}
+		</style>
+		<script src = "js/tool.js"></script>
+		<script>
+			window.onload = function(){
+				$("#release").onclick = function(){
+					//显示输入框
+					$("#panel").style.display = "block";
+				}	
+				//点击X隐藏输入框
+				$("#close").onclick = function(){
+					$("#panel").style.display = "none";
+				}
+				//点击确定发布内容
+				$("#enter").onclick = function(){
+					var oDiv = document.createElement("div");
+					oDiv.innerHTML = $("#txt").value;
+					//清空输入框
+					$("#txt").value = "";
+					oDiv.style.backgroundColor = randomColor();
+					$("#msg").appendChild(oDiv);
+
+				}
+
+
+
+				//标题栏被拖拽的时候可以被拖拽
+				var offsetX = 0;
+				var offsetY = 0;
+				$(".title")[0].onmousedown = function(ev){
+					offsetX = ev.clientX - $("#panel").offsetLeft;
+					offsetY = ev.clientY - $("#panel").offsetTop;
+					//进行拖拽
+					document.onmousemove = function(ev){
+						$("#panel").style.left = ev.clientX - offsetX + "px";
+						$("#panel").style.top = ev.clientY - offsetY + "px";
+					}
+
+					document.onmouseup = function(){
+						document.onmousemove = null;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input id = "release" type = "button" value = "发布" />
+		<div id = "panel">
+			<div class = "title">
+				<button id = "close">X</button>
+				<button id = "enter">确定</button>
+			</div>
+			<div class = "body">
+				<textarea id="txt" cols="30" rows="10"></textarea>
+			</div>
+		</div>
+		<div id = "msg">
+			<div>dadad</div>
+			<div>sdagaf</div>
+		</div>
+	</body>
+</html>
